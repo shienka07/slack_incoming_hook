@@ -6,12 +6,14 @@ import java.util.*;
 public class Bot {
     public static void main(String[] args) { 
         String webhookUrl = System.getenv("SLACK_WEBHOOK_URL");
+        String message = System.getenv("SLACK_WEBHOOK_URL");
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(webhookUrl))
             .header("Content-Type", "application/json")
-            .POST(HttpRequest.BodyPublishers.ofString("{\"text\":\"테스트 메시지\"}")) 
+            // .POST(HttpRequest.BodyPublishers.ofString("{\"text\":\"테스트 메시지\"}")) 
+            .POST(HttpRequest.BodyPublishers.ofString("{\"text\":\" + " + message + "\"}")) 
             .build();
         
         try {
