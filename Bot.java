@@ -6,7 +6,7 @@ import java.util.*;
 public class Bot {
     public static void main(String[] args) { 
         String webhookUrl = System.getenv("SLACK_WEBHOOK_URL");
-        String message = System.getenv("SLACK_WEBHOOK_URL");
+        String message = System.getenv("SLACK_WEBHOOK_MSG");
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
